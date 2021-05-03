@@ -13,7 +13,7 @@
 
 Auth::routes();
 
-Route::gorup(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function() {
     //Todoの一覧表示
     Route::get('/todo', 'TodoController@index')->name('todo.index');
 });
