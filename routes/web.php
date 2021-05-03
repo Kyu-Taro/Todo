@@ -13,4 +13,8 @@
 
 Auth::routes();
 
-Route::get('/todo', 'TodoController@index')->name('todo.index');
+Route::gorup(['middleware' => 'auth'], function() {
+    //Todoの一覧表示
+    Route::get('/todo', 'TodoController@index')->name('todo.index');
+});
+
