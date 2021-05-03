@@ -11,6 +11,7 @@
 <div class="card">
     <div class="card-body">
         {{ $value->content }}
+        <button type="button" class="btn btn-success">編集</button>
         <button type="button" class="btn btn-danger">削除</button>
     </div>
 </div>
