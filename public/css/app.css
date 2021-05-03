@@ -10942,3 +10942,28 @@ a.text-dark:focus {
   }
 }
 
+.todo-container {
+    width: 50%;
+    margin: auto;
+}
+
+.todo-add-form {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 30px;
+}
+
+.form-input {
+    width: 90%;
+    border: 1px solid #DFDFDF;
+}
+
+.card-body {
+    display: flex;
+}
+
+.fix-btn {
+    display: inline-block;
+    margin: 0 0 0 auto;
+}
+
