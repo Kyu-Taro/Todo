@@ -14,7 +14,7 @@ class TodoService {
      */
     public function index() : \Illuminate\Database\Eloquent\Collection
     {
-        $data = Todo::where('user_id', Auth::id())->get();
+        $data = Todo::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
         return $data;
     }
 }
