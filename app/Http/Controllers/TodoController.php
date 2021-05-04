@@ -19,4 +19,14 @@ class TodoController extends Controller
         $data = app(TodoService::class)->index();
         return view('todo.index', compact('data'));
     }
+
+    public function store(Request $request)
+    {
+        $form = $request->all();
+        unset($form['_token']);
+        $todo = new Todo();
+        $todo->fill($form)->save();
+
+        return redirect(route('todo.index'));
+    }
 }

@@ -2,8 +2,10 @@
 
 @section('content')
 <div class="todo-container">
-    <form class="todo-add-form" method="POST" action="">
-        <input type="text" id="disabledTextInput" class="form-input">
+    <form class="todo-add-form" method="POST" action="{{ route('todo.store') }}">
+        @csrf
+        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+        <input type="text" id="disabledTextInput" class="form-input" name="content">
         <button type="submit" class="btn btn-primary">追加</button>
     </form>
     @foreach ($data as $value)

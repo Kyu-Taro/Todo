@@ -16,5 +16,8 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function() {
     //Todoの一覧表示
     Route::get('/todo', 'TodoController@index')->name('todo.index');
+
+    //Todoの登録
+    Route::post('/todo', 'TodoController@store')->name('todo.store');
 });
 
