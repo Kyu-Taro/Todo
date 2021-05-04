@@ -20,13 +20,16 @@ class TodoController extends Controller
         return view('todo.index', compact('data'));
     }
 
-    public function store(Request $request)
-    {
-        $form = $request->all();
-        unset($form['_token']);
-        $todo = new Todo();
-        $todo->fill($form)->save();
 
+    /**
+     * Todoの新規登録
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store(Request $request) : \Illuminate\Http\RedirectResponse
+    {
+        app(TodoService::class)->store($request);
         return redirect(route('todo.index'));
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Models\Todo;
 
 class TodoService {
@@ -16,5 +17,19 @@ class TodoService {
     {
         $data = Todo::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
         return $data;
+    }
+
+    /**
+     * Todoの新規登録処理
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function store(Request $request) : void
+    {
+        $form = $request->all();
+        unset($form['_token']);
+        $todo = new Todo();
+        $todo->fill($form)->save();
     }
 }
