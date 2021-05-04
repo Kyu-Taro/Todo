@@ -23,7 +23,7 @@
                 <form action="{{ route('todo.destroy', ['todo' => $value->id]) }}" method="POST" class="edit-delete-btn">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger" onclick="return confirm('{{ $value->content }}を削除しますか?')">削除</button>
+                    <button type="submit" class="btn btn-danger" onclick="confirm('{{ $value->content }}を削除しますか?')">削除</button>
                 </form>
             </div>
         </div>
