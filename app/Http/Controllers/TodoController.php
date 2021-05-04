@@ -33,9 +33,15 @@ class TodoController extends Controller
         return redirect(route('todo.index'));
     }
 
-    public function destroy(Todo $todo)
+    /**
+     * Todoの削除
+     *
+     * @param Todo $todo
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy(Todo $todo) : \Illuminate\Http\RedirectResponse
     {
-        $todo->delete();
+        app(TodoService::class)->destroy($todo);
 
         return redirect(route('todo.index'));
     }

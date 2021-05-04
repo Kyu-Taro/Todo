@@ -32,4 +32,15 @@ class TodoService {
         $todo = new Todo();
         $todo->fill($form)->save();
     }
+
+    /**
+     * Todoの削除処理
+     *
+     * @param Todo $todo
+     * @return void
+     */
+    public function destroy(Todo $todo) : void
+    {
+        $todo->delete();
+    }
 }
