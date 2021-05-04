@@ -19,5 +19,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     //Todoの登録
     Route::post('/todo', 'TodoController@store')->name('todo.store');
+
+    //Todo削除
+    Route::delete('/todo/{todo}', 'TodoController@destroy')->name('todo.destroy');
 });
 

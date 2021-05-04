@@ -17,10 +17,13 @@
             {{ $value->content }}
             <div class="fix-btn">
                 <form action="" method="POST" class="edit-delete-btn">
+                    @csrf
                     <button type="submit" class="btn btn-success">編集</button>
                 </form>
-                <form action="" methods="POST" class="edit-delete-btn">
-                    <button type="submit" class="btn btn-danger">削除</button>
+                <form action="{{ route('todo.destroy', ['todo' => $value->id]) }}" method="POST" class="edit-delete-btn">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('{{ $value->content }}を削除しますか?')">削除</button>
                 </form>
             </div>
         </div>

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Todo;
-use Illuminate\Support\Facades\Auth;
 use App\Services\TodoService;
 use App\Http\Requests\TodoRequest;
 
@@ -31,6 +30,13 @@ class TodoController extends Controller
     public function store(TodoRequest $request) : \Illuminate\Http\RedirectResponse
     {
         app(TodoService::class)->store($request);
+        return redirect(route('todo.index'));
+    }
+
+    public function destroy(Todo $todo)
+    {
+        $todo->delete();
+
         return redirect(route('todo.index'));
     }
 }
