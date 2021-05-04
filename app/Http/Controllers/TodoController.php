@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Todo;
 use Illuminate\Support\Facades\Auth;
 use App\Services\TodoService;
+use App\Http\Requests\TodoRequest;
 
 class TodoController extends Controller
 {
@@ -27,7 +28,7 @@ class TodoController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request) : \Illuminate\Http\RedirectResponse
+    public function store(TodoRequest $request) : \Illuminate\Http\RedirectResponse
     {
         app(TodoService::class)->store($request);
         return redirect(route('todo.index'));

@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="todo-container">
+    @if($errors->has('content'))
+        <span class="error_msg">{{ $errors->first('content') }}</span>
+    @endif
     <form class="todo-add-form" method="POST" action="{{ route('todo.store') }}">
         @csrf
         <input type="hidden" name="user_id" value="{{ Auth::id() }}">

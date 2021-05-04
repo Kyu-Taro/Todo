@@ -10967,3 +10967,6 @@ a.text-dark:focus {
     margin: 0 0 0 auto;
 }
 
+.error_msg {
+    color: red;
+}
