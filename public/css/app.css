@@ -10970,3 +10970,7 @@ a.text-dark:focus {
 .error_msg {
     color: red;
 }
+
+.edit-delete-btn {
+    display: inline;
+}

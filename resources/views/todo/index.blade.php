@@ -16,8 +16,12 @@
         <div class="card-body card-flex">
             {{ $value->content }}
             <div class="fix-btn">
-                <button type="button" class="btn btn-success">編集</button>
-                <button type="button" class="btn btn-danger">削除</button>
+                <form action="" method="POST" class="edit-delete-btn">
+                    <button type="submit" class="btn btn-success">編集</button>
+                </form>
+                <form action="" methods="POST" class="edit-delete-btn">
+                    <button type="submit" class="btn btn-danger">削除</button>
+                </form>
             </div>
         </div>
     </div>
