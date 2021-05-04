@@ -10958,7 +10958,7 @@ a.text-dark:focus {
     border: 1px solid #DFDFDF;
 }
 
-.card-body {
+.card-flex {
     display: flex;
 }
 

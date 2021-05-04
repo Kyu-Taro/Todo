@@ -8,7 +8,7 @@
     </form>
     @foreach ($data as $value)
     <div class="card">
-        <div class="card-body">
+        <div class="card-body card-flex">
             {{ $value->content }}
             <div class="fix-btn">
                 <button type="button" class="btn btn-success">編集</button>
