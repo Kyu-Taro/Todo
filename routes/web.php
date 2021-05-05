@@ -25,5 +25,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     //Todo更新画面
     Route::get('/todo/{todo}/edit', 'TodoController@edit')->name('todo.edit');
+
+    //Todo更新処理
+    Route::put('/todo/{todo}', 'TodoController@update')->name('todo.update');
 });
 

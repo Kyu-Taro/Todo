@@ -50,10 +50,26 @@ class TodoController extends Controller
      * 該当のTodoを更新用に取得する
      *
      * @param Todo $todo
-     * @return void
+     * @return \Illuminate\View\View
      */
-    public function edit(Todo $todo)
+    public function edit(Todo $todo) : \Illuminate\View\View
     {
         return view('todo.edit', compact('todo'));
+    }
+
+    /**
+     * 特定のTodoの編集処理
+     *
+     * @param Request $request
+     * @param Todo $todo
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(Request $request, Todo $todo) : \Illuminate\Http\RedirectResponse
+    {
+        $form = $request->all();
+        unset($form['_token']);
+        $todo->fill($form)->save();
+
+        return redirect(route('todo.index'));
     }
 }
