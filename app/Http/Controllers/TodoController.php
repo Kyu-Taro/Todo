@@ -46,6 +46,12 @@ class TodoController extends Controller
         return redirect(route('todo.index'));
     }
 
+    /**
+     * 該当のTodoを更新用に取得する
+     *
+     * @param Todo $todo
+     * @return void
+     */
     public function edit(Todo $todo)
     {
         return view('todo.edit', compact('todo'));
