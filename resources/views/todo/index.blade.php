@@ -16,8 +16,7 @@
         <div class="card-body card-flex">
             {{ $value->content }}
             <div class="fix-btn">
-                <form action="" method="POST" class="edit-delete-btn">
-                    @csrf
+                <form action="{{ route('todo.edit', ['todo' => $value->id]) }}" method="GET" class="edit-delete-btn">
                     <button type="submit" class="btn btn-success">編集</button>
                 </form>
                 <form action="{{ route('todo.destroy', ['todo' => $value->id]) }}" method="POST" class="edit-delete-btn">

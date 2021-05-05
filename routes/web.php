@@ -22,5 +22,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     //Todo削除
     Route::delete('/todo/{todo}', 'TodoController@destroy')->name('todo.destroy');
+
+    //Todo更新画面
+    Route::get('/todo/{todo}/edit', 'TodoController@edit')->name('todo.edit');
 });
 

@@ -45,4 +45,9 @@ class TodoController extends Controller
 
         return redirect(route('todo.index'));
     }
+
+    public function edit(Todo $todo)
+    {
+        return view('todo.edit', compact('todo'));
+    }
 }

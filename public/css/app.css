@@ -10974,3 +10974,7 @@ a.text-dark:focus {
 .edit-delete-btn {
     display: inline;
 }
+
+.edit-form {
+    margin-top: 30px;
+}
