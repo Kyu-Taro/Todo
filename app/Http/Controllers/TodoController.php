@@ -66,9 +66,7 @@ class TodoController extends Controller
      */
     public function update(Request $request, Todo $todo) : \Illuminate\Http\RedirectResponse
     {
-        $form = $request->all();
-        unset($form['_token']);
-        $todo->fill($form)->save();
+        app(TodoService::class)->update($request, $todo);
 
         return redirect(route('todo.index'));
     }

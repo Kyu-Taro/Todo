@@ -43,4 +43,18 @@ class TodoService {
     {
         $todo->delete();
     }
+
+    /**
+     * 特定のTodoの編集処理
+     *
+     * @param Request $request
+     * @param Todo $todo
+     * @return void
+     */
+    public function update(Request $request, Todo $todo) : void
+    {
+        $form = $request->all();
+        unset($form['_token']);
+        $todo->fill($form)->save();
+    }
 }
